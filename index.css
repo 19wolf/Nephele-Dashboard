@@ -1,0 +1,139 @@
+html {
+  padding: 1em;
+  min-height: 100%;
+}
+header {
+  grid-area: h;
+  align-self: center;
+  text-align: center;
+}
+nav {
+  align-self: center;
+  grid-area: n; 
+ display: flex !important;
+}
+nav a{
+  flex: 1 1 auto;
+   text-align: center;
+   border: 1px solid rgba(0,0,0,.12);
+   background: #def;
+   padding: .25em .5em;
+   color: #000000;
+   text-decoration: none;
+   }
+section, header, footer{
+padding: 0 !important;
+margin: 0 !important;
+}
+nav a:hover {
+   background: #fedcba;
+   color: #000000;
+   text-decoration: none;
+   }
+#stats {
+  grid-area: s;
+  align-self: center;
+  text-align: center;
+}
+#containers {
+  grid-area: c;
+}
+#disks {
+  grid-area: d;
+}
+#pools {
+  grid-area: p;
+  justify-self: center;
+  align-self: center;
+}
+#pools > table{
+border:none;
+}
+#pools thead{
+display:none;
+}
+#pools tr{
+background: none;
+}
+#pools td{border:none}
+
+table {
+  min-width: 100%;
+  border: 1px solid rgba(0,0,0,.12);
+  margin: 0 !important;
+}
+meter {
+  min-width: 100%;
+}
+td {
+  text-align: center;
+}
+th {
+  background: #ddeeff;
+  border-bottom: 1px solid rgba(0,0,0,.12) !important;
+  text-align: center !important;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+tr{
+  font-size: 1em !important;
+  line-height: 1em;
+  height: 2em !important;
+  margin: 0 !important;
+}
+#files {
+  grid-area: fi;
+}
+footer {
+  grid-area: fo;
+  align-self: end;
+}
+
+body {
+  display: grid;
+  grid-template-areas:
+    "h h p"
+    "s s p"
+    "n n p"
+    "fi c d"
+    "fi c d"
+    "fo fo fo";
+  grid-gap: 1em;
+}
+
+@media (max-width: 1375px) {
+    body{
+        /*  Redefine the grid into a single column layout. */
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "h h"
+            "s s"
+            "n n"
+            "p p"
+            "c fi"
+            "d fi"
+            "fo fo";
+    }
+}
+@media (max-width: 850px) {
+    body{
+        /*  Redefine the grid into a single column layout. */
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "h"
+            "s"
+            "n"
+            "p"
+            "c"
+            "d"
+            "fi"
+            "fo";
+    }
+    nav{
+    
+    }
+    nav a {
+      flex: 1 0 10em;
+    }
+}
