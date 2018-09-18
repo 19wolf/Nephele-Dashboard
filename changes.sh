@@ -1,5 +1,5 @@
 #!/bin/bash
-DIRS="/data/Media/Anime /data/Media/Television /data/Media/Movies /data/Media/Music /data/Media/Photos /data/Eric /data/Sarah /data/Steam /data/Fileshare"
+DIRS=$(find /data/Media/ -maxdepth 1 -mindepth 1 -type d -not -path '*/\.*' && find /data/ -maxdepth 1 -mindepth 1 -type d -not -path '*/\.*' -not -path '/data/Media')
 
 fileInfo () {
 local CHANGE=$(find $DIR -not -path '*/\.*' -type f -mtime -7 | wc -l)
